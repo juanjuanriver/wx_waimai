@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class="container">
+<!-- 1.头部开始 -->
+  <view class="header {{scrollDown?'scrolled':''}}">
+  <!-- 1.1定位 -->
+    <view class='location ellipsis'>
+     	<image class="icon" src="/imgs/index/icon_location.png"/>
+			{{address}}
+    </view>
+  <!-- 1.2搜索框 -->
+    <view class='search'>
+    <image class='icon' src='/imgs/index/icon_search.png'/>
+    <i class="fa fa-home"></i>
+    丝娃娃
+    </view>
+  </view>
+  <!-- 1.头部结束 -->
+<!-- 2.banner可滚动视图区域开始 -->
+<scroll-view scroll-y="true" scroll-into-view="{{scrollIntoView}}" bindscroll="onScroll">
+<!-- 2.1轮播图开始 -->
+ <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+			<block wx:for="{{banners}}" wx:key="id">
+				<swiper-item>
+					<image bindtap="tapBanner" data-id="{{index}}" src="{{item.img}}"/>
+				</swiper-item>
+			</block>
+	</swiper>
+<!-- 2.1轮播图结束 -->
+<!-- 2.2图标滑动部分开始 -->
+	<swiper class="section icons" indicator-dots="true" autoplay="" interval="" duration="500">
+			<swiper-item wx:for="{{icons}}" wx:for-item="list" wx:key="id">
+				<view class="icon" wx:for="{{list}}" wx:for-item="icon" wx:key="id" bindtap="toNearby">
+					<image src="{{icon.img}}"/>
+					<text>{{icon.name}}</text>
+				</view>
+			</swiper-item>
+	</swiper>
+
+<!-- 2.2图标滑动部分结束 -->
+<view class="section section-big" id='discount'>
+			<view class="title">优惠专区</view>
+      <view wx:for="{{discounts}}"class="content">
+      	<image data-id="{{index}}" src="{{item.img}}"/>
+      </view>
+</view>
+
+		<view class="section section-big preferred">
+			<view class="title">为你优选</view>
+			<image class="content" bindtap="toNearby" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1138087946,2194822351&fm=26&gp=0.jpg"/>
+		</view>
+
+		<view class="section section-big special">
+			<view class="title">特色频道</view>
+			<image class="content" bindtap="toNearby" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=152854282,1239487229&fm=26&gp=0.jpg"/>
+		</view>
+	<view class="loading">努力加载中…</view>
+</scroll-view>
+<!-- 2.banner可滚动视图区域结束 -->
+</view>

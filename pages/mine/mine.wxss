@@ -1,0 +1,58 @@
+
+/* 头部开始*/
+.head{
+  position: relative;
+  width: 100%;
+  height: 250rpx;
+  text-align: center;
+  background-color: #3CB371;
+  overflow: hidden
+}
+/* 头像 */
+.list_img{
+  position: relative;
+  top: 25%;
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+}
+/* 昵称 */
+.nickname {
+	color: #fff;
+	font-size: 20px;
+	line-height: 2.4;
+	text-align: center;
+}
+/* 按钮居中 */
+.btn_sub{
+  width: 40%;
+  height: 100rpx;
+  background-color:none;
+}
+/* 头部结束 */
+
+
+.section {
+	padding: 0;
+	color: #2e2e2e;
+	font-size: 30rpx;
+}
+.section .line {
+	margin-left: 30rpx;
+	padding-right: 30rpx;
+	line-height: 3;
+	border-bottom: 1px solid #efefef;
+}
+.section .line:last-child {
+	border-bottom: none;
+}
+.section .line:before {
+	content: '>';
+	float: right;
+	color: #aaa;
+	margin-left: 20rpx;
+}
+.section .line .tl {
+	float: right;
+	color: #aaa;
+}
